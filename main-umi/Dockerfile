@@ -2,7 +2,7 @@
 # build stage
 FROM node as build-stage
 WORKDIR /app
-COPY package*.json ./
+COPY package*.json yarn.lock ./
 # RUN npm ci
 COPY . .
 RUN npm run build
