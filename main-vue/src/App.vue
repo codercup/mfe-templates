@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/vue">Vue子项目</router-link> |
-      <router-link to="/sub-umi/">Umi子项目</router-link> |
+      <router-link to="/umi">Umi子项目</router-link> |
       <router-link to="/react">React子项目</router-link> |
     </div>
     <!-- 主应用容器 -->

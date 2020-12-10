@@ -33,7 +33,7 @@ registerMicroApps([
     name: 'sub-umi',
     entry: '//localhost:8090',
     container: '#container',
-    activeRule: '/sub-umi' // 与子项目的 router.base一致
+    activeRule: '/umi' // 与子项目的 router.base一致
   },
   {
     name: 'sub-react',
