@@ -137,21 +137,3 @@ proxy: {
 
 - `main-vue + sub-umi` `http://localhost:8000/umi`路由没任何反应 。
   `main-umi + sub-umi` `http://localhost:9000/umi`一切正常。
-
-- `main-umi + sub-react` react 子项目退出时，会报错：(`main-vue`时不会出现这个错误)
-
-  ```js
-  Uncaught (in promise) Error: parcel 'sub-react_1607588417983_238' died in status UNMOUNTING:
-  Minified React error #40; visit https://reactjs.org/docs/error-decoder.html?invariant=40 for the full message
-  or use the non-minified dev environment for full errors and additional helpful warnings.
-      at Object.t.unmountComponentAtNode (react-dom.production.min.js:296)
-      at eval (index.js:37)
-      at s (runtime.js:63)
-      at Generator.eval [as _invoke] (runtime.js:293)
-      at Generator.eval [as next] (runtime.js:118)
-      at r (asyncToGenerator.js:3)
-      at i (asyncToGenerator.js:25)
-      at eval (asyncToGenerator.js:32)
-      at new Promise (<anonymous>)
-      at eval (asyncToGenerator.js:21)
-  ```
