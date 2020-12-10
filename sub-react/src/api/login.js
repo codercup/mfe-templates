@@ -1,6 +1,6 @@
 function postData (url, data) {
   if (window.__POWERED_BY_QIANKUN__) {
-    url = `/sub-react${url}`
+    url = `/subReactApi${url}`
   }
   console.log('url:', url)
   // Default options are marked with *

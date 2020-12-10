@@ -59,7 +59,7 @@ npx create-react-app <appName>
   首先需要加上特定前缀，以识别是哪个子应用发起的，如加上`sub-vue`，然后主项目需要进行`proxy`转发：
 
   ```nginx
-  http://localhost:8000/sub-vue/api --> http://localhost:8080/api --> http://localhost:4040
+  http://localhost:8000/subVueApi/api --> http://localhost:8080/api --> http://localhost:4040
   ```
 
 详情请看项目文件！
@@ -91,25 +91,25 @@ proxy: {
       '/api': '/'
     }
   },
-  '^/sub-vue': {
+  '^/subVueApi': {
     target: 'http://localhost:8080',
     changeOrigin: true,
     pathRewrite: {
-      '/sub-vue': '/'
+      '/subVueApi': '/'
     }
   },
-  '^/sub-umi': {
+  '^/subUmiApi': {
     target: 'http://localhost:8090',
     changeOrigin: true,
     pathRewrite: {
-      '/sub-umi': '/'
+      '/subUmiApi': '/'
     }
   },
-  '^/sub-react': {
+  '^/subReactApi': {
     target: 'http://localhost:8100',
     changeOrigin: true,
     pathRewrite: {
-      '/sub-react': '/'
+      '/subReactApi': '/'
     }
   }
 }

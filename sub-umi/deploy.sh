@@ -1,3 +1,4 @@
+npm run build
 docker image build ./ -t sub-umi:1.0.0
 # docker run \
 #     # 指定容器停止后的重启策略:

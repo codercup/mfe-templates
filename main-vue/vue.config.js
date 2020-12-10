@@ -8,25 +8,25 @@ module.exports = {
           '/api': '/'
         }
       },
-      '^/sub-vue': {
+      '^/subVueApi': {
         target: 'http://localhost:8080',
         changeOrigin: true,
         pathRewrite: {
-          '/sub-vue': '/'
+          '/subVueApi': '/'
         }
       },
-      '^/sub-umi': {
+      '^/subUmiApi': {
         target: 'http://localhost:8090',
         changeOrigin: true,
         pathRewrite: {
-          '/sub-umi': '/'
+          '/subUmiApi': '/'
         }
       },
-      '^/sub-react': {
+      '^/subReactApi': {
         target: 'http://localhost:8100',
         changeOrigin: true,
         pathRewrite: {
-          '/sub-react': '/'
+          '/subReactApi': '/'
         }
       }
     }

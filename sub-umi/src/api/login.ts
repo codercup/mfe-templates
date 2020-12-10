@@ -4,7 +4,7 @@ function postData(url: string, data: Object) {
     (window as any).__POWERED_BY_QIANKUN__,
   );
   if ((window as any).__POWERED_BY_QIANKUN__) {
-    url = `/sub-umi${url}`;
+    url = `/subUmiApi${url}`;
   }
   console.log('url:', url);
   // Default options are marked with *
