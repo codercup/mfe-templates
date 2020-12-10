@@ -16,7 +16,7 @@ function App () {
   }, [])
   return (
     <BrowserRouter basename='/react'>
-      <Link to='/'>首页</Link>
+      <Link to='/'>首页.2.</Link> {' | '}
       <Link to='/about'>关于页面</Link>
       <Route
         path='/'

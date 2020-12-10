@@ -4,12 +4,16 @@ import './index.css'
 import App from './App'
 // import reportWebVitals from './reportWebVitals'
 
-function render () {
+function render (props = {}) {
+  const { container } = props
+  const root = container
+    ? container.querySelector('#root')
+    : document.getElementById('root')
   ReactDOM.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-    document.getElementById('root')
+    root
   )
 }
 
@@ -34,7 +38,7 @@ export async function mount (props) {
 }
 export async function unmount (props) {
   console.log('react app unmount', props)
-  ReactDOM.unmountComponentAtNode(document.getElementById('root'))
+  ReactDOM.unmountComponentAtNode(props.container.querySelector('#root'))
 }
 
 // If you want to start measuring performance in your app, pass a function
