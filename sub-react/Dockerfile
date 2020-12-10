@@ -1,9 +1,9 @@
 # dockerfile
 # build stage
-FROM node as build-stage
+FROM hub.c.163.com/library/node as build-stage
 WORKDIR /app
-COPY package*.json yarn.lock ./
-# RUN npm ci
+COPY package*.json ./
+RUN npm install --registry https://registry.npm.taobao.org
 COPY . .
 RUN npm run build
 
