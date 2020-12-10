@@ -39,7 +39,7 @@ registerMicroApps([
     name: 'sub-react',
     entry: '//localhost:8100',
     container: '#container',
-    activeRule: '/sub-react' // 与子项目的 router.base一致
+    activeRule: '/react' // 与子项目的 router.base一致
   }
 ])
 

@@ -20,6 +20,9 @@ export default {
       userInfo: ''
     }
   },
+  mounted () {
+    this.login()
+  },
   methods: {
     async login () {
       const res = await login({ name: 'admin' })

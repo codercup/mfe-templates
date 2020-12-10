@@ -12,11 +12,11 @@ module.exports = {
       'Access-Control-Allow-Origin': '*'
     },
     proxy: {
-      '^/api': {
+      '/api': {
         target: 'http://localhost:4040',
         changeOrigin: true,
         pathRewrite: {
-          '/api': '/'
+          '^/api': '/'
         }
       }
     }

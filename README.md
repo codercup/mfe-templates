@@ -32,13 +32,13 @@ yarn create @umijs/umi-app
 react 项目使用 cra 脚手架：
 
 ```bash
-# todo
+npx create-react-app <appName>
 ```
 
 ## 注意
 
 - 1、需要全局安装 1 个包：`express`。
-- 2、运行项目之前，先运行后端服务: `node server.js` or `npm run prestart`.
+- 2、运行项目之前，先运行后端服务: `node server.js` or `npm run server`.
 
 ## 代理请求
 
@@ -61,14 +61,30 @@ react 项目使用 cra 脚手架：
   http://localhost:8000/sub-vue/api --> http://localhost:8080/api --> http://localhost:4040
   ```
 
-详情请看项目文件！（还是贴出来吧）
+详情请看项目文件！
 
-- 主项目的 `proxy`:
+## 重点关注
+
+所有项目的`proxy`配置都相似，为如下结构：
 
 ```js
 proxy: {
-  '^/api': {
-    target: 'http://localhost:3000',
+  '/api': { // 不能用'^'（确切地说：vue项目可用，可不用，但是umi一定不能用！）
+    target: 'http://localhost:4000',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': '/'
+    }
+  },
+}
+```
+
+但是`main-vue`项目这样配会出问题，应该使用如下配置：
+
+```js
+proxy: {
+  '^/api': {  // 注意要'^'号（确切地说是，vue子项目可用可不用，umi不能用，vue主项目一定要用！）
+    target: 'http://localhost:4000',
     changeOrigin: true,
     pathRewrite: {
       '/api': '/'
@@ -80,20 +96,34 @@ proxy: {
     pathRewrite: {
       '/sub-vue': '/'
     }
+  },
+  '^/sub-umi': {
+    target: 'http://localhost:8090',
+    changeOrigin: true,
+    pathRewrite: {
+      '/sub-umi': '/'
+    }
+  },
+  '^/sub-react': {
+    target: 'http://localhost:8100',
+    changeOrigin: true,
+    pathRewrite: {
+      '/sub-react': '/'
+    }
   }
 }
 ```
 
-- 子项目的 `proxy`:
+这样配置基本可以，但是`main-vue + sub-umi`项目却还是有问题，就是刷新浏览器之后，还是会报错。
 
-```js
-proxy: {
-  '^/api': {
-    target: 'http://localhost:4040',
-    changeOrigin: true,
-    pathRewrite: {
-      '/api': '/'
-    }
-  },
-}
-```
+## 总结
+
+`main-umi` 目前没有一点问题，很好用。
+
+`main-vue` 目前不能很好地配合`sub-umi`，其他都 OK!
+
+幸好现在公司决定使用`umi`做基座(完全没问题)！
+
+## 后续研究
+
+后续研究下打包之后的 `nginx` 配置，以及是否会出现问题。（能否把 vue 扳回一城？）
