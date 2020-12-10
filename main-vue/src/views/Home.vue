@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     async login () {
-      const res = await login({ name: 'admin' })
+      const res = await login({ name: 'main-vue' })
       console.log(JSON.stringify(res, null, 2))
       this.userInfo = JSON.stringify(res, null, 2)
     },
