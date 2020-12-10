@@ -128,3 +128,13 @@ proxy: {
 ## 后续研究
 
 后续研究下打包之后的 `nginx` 配置，以及是否会出现问题。（能否把 vue 扳回一城？）
+
+## 2020.12.10 更新
+
+下午把`docker+nginx`配置进去，每个项目里面只需要执行 `./deploy.sh`即可发布。
+
+但是依然发现，有以下几个问题：
+
+- 微前端里面的`umi`子项目还是报错（跨域）。
+  Access to fetch at 'http://localhost:8090/' from origin 'http://localhost:9002' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+- 待发现...
