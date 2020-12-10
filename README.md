@@ -135,13 +135,8 @@ proxy: {
 
 但是依然发现，有以下几个问题：
 
-- 微前端里面的`umi`子项目还是报错（跨域）。
-
-  ```js
-  Access to fetch at 'http://localhost:8090/' from origin 'http://localhost:9000' has been blocked by CORS policy:
-  No 'Access-Control-Allow-Origin' header is present on the requested resource.
-  If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-  ```
+- `main-vue + sub-umi` `http://localhost:8000/umi`路由没任何反应 。
+  `main-umi + sub-umi` `http://localhost:9000/umi`一切正常。
 
 - `main-umi + sub-react` react 子项目退出时，会报错：(`main-vue`时不会出现这个错误)
 
