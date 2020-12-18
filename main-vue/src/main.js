@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')
 
 registerMicroApps([
@@ -24,23 +24,23 @@ registerMicroApps([
   //   activeRule: '/yourActiveRule2'
   // }
   {
-    name: 'sub-vue',
-    entry: '//localhost:8080',
+    name: 'vueApp',
+    entry: '//localhost:1888',
     container: '#container',
-    activeRule: '/vue' // 与子项目的 router.base一致
+    activeRule: '/vue', // 与子项目的 router.base一致
   },
-  {
-    name: 'sub-umi',
-    entry: '//localhost:8090',
-    container: '#container',
-    activeRule: '/umi' // 与子项目的 router.base一致
-  },
-  {
-    name: 'sub-react',
-    entry: '//localhost:8100',
-    container: '#container',
-    activeRule: '/react' // 与子项目的 router.base一致
-  }
+  // {
+  //   name: 'sub-umi',
+  //   entry: '//localhost:8090',
+  //   container: '#container',
+  //   activeRule: '/umi', // 与子项目的 router.base一致
+  // },
+  // {
+  //   name: 'sub-react',
+  //   entry: '//localhost:8100',
+  //   container: '#container',
+  //   activeRule: '/react', // 与子项目的 router.base一致
+  // },
 ])
 
 // 开启服务

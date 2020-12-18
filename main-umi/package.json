@@ -13,8 +13,12 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": ["prettier --write"],
-    "*.ts?(x)": ["prettier --parser=typescript --write"]
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "dependencies": {
     "@ant-design/pro-layout": "^5.0.12",
