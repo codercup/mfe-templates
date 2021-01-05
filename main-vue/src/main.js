@@ -21,11 +21,17 @@ registerMicroApps([
   //   name: 'vue app',
   //   entry: { scripts: ['//localhost:7100/main.js'] },
   //   container: '#yourContainer2',
-  //   activeRule: '/yourActiveRule2'
-  // }
+  //   activeRule: '/yourActiveRule2',
+  // },
+  // {
+  //   name: 'vueApp',
+  //   entry: '//localhost:1888',
+  //   container: '#container',
+  //   activeRule: '/vue', // 与子项目的 router.base一致
+  // },
   {
-    name: 'vueApp',
-    entry: '//localhost:1888',
+    name: 'sub-vue',
+    entry: '//localhost:8081',
     container: '#container',
     activeRule: '/vue', // 与子项目的 router.base一致
   },

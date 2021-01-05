@@ -1,6 +1,6 @@
 module.exports = {
   devServer: {
-    https: true,
+    https: false,
     proxy: {
       '^/api': {
         target: 'http://localhost:4000',
@@ -9,20 +9,20 @@ module.exports = {
           '/api': '/',
         },
       },
+      // '^/subVueApi': {
+      //   target: 'http://localhost:1888',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '/subVueApi': '/',
+      //   },
+      // },
       '^/subVueApi': {
-        target: 'http://localhost:1888',
+        target: 'http://localhost:8081',
         changeOrigin: true,
         pathRewrite: {
           '/subVueApi': '/',
         },
       },
-      // '^/subVueApi': {
-      //   target: 'http://localhost:8080',
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     '/subVueApi': '/'
-      //   }
-      // },
       // '^/subUmiApi': {
       //   target: 'http://localhost:8090',
       //   changeOrigin: true,
